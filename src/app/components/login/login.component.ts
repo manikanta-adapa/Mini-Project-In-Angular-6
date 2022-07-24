@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
 
+
+
   }
 
   public login(arg1):any{
@@ -24,14 +26,14 @@ export class LoginComponent implements OnInit {
         window.localStorage.setItem("login_details",JSON.stringify(res));
         this._router.navigate(["/dashboard"]);
       }
-      else 
+      else
       alert("Login failed");
     },(err:HttpErrorResponse)=>{
       if(err.error instanceof Error)
       console.log("Client side error")
       else
       console.log("Server side error")
-      
+
     })
   }
 
